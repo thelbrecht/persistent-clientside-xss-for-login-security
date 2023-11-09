@@ -114,7 +114,7 @@ def get_script_src_exploit(finding):
         original_script_src = script_src
         # we have found the complete value directly, just substitute it with a hostname under our control
         if script_src.startswith(source["value_part"]):
-            payload = "https://" + SCRIPT_SOURCE_HOSTNAME + '/'
+            payload = "https://" + SCRIPT_SOURCE_HOSTNAME # NOTE: Commented out to host at subpath+ '/'
             found = True
         # check for relative URL
         if not script_src.startswith("http"):
@@ -184,7 +184,7 @@ def get_script_src_exploit(finding):
                         except KeyError:
                             replace_with = manual_quote(replace_with)
                     # check whether the substitution was indeed successful
-                    if 'alert' not in replace_with and SCRIPT_SOURCE_HOSTNAME not in replace_with:
+                    if 'DOMXSSVerify' not in replace_with and SCRIPT_SOURCE_HOSTNAME not in replace_with:
                         log("Substitution of script source PCXSS candidate did not work!")
                     else:
                         exploits.append(
@@ -508,7 +508,7 @@ def get_js_exploit(finding):
                     if replace_with == replace_value:
                         continue
                     # FIXME what could possibly go wrong here if you change the payload to something malicious ;)
-                    if "alert" not in replace_with and "persistent" not in replace_with:
+                    if "DOMXSSVerify" not in replace_with and "persistent" not in replace_with:
                         log('Failed to find js exploit after substitution for PCXSS JS exploit!')
                         continue
                     exploits.append(
@@ -696,7 +696,7 @@ def get_html_exploit(finding):
                             if replace_with == replace_value:
                                 continue
                             # FIXME what could possibly go wrong here if you change the payload to something malicious ;)
-                            if "alert" not in replace_with and "persistent" not in replace_with:
+                            if "DOMXSSVerify" not in replace_with and "persistent" not in replace_with:
                                 log('Failed to find HTML exploit after substitution for PCXSS JS exploit!')
                                 continue
                             exploits.append(

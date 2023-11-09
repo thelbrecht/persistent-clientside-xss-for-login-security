@@ -25,6 +25,7 @@ parser = argparse.ArgumentParser(description="""Automatic Exploit Generator resu
 
 parser.add_argument("--debug", action="store_true")
 parser.add_argument("--payload", default='alert(document.domain)')
+parser.add_argument("-f", "--finding", dest='finding', metavar="finding", type=str, help="JSON representation of the finding")
 
 CONFIG = parser.parse_args()
 
@@ -38,4 +39,4 @@ GENERATE_EXPLOIT_FOR_SOURCES += [SOURCES.SOURCE_COOKIE]
 GENERATE_EXPLOIT_FOR_SOURCES += [SOURCES.SOURCE_LOCAL_STORAGE]
 GENERATE_EXPLOIT_FOR_SOURCES += [SOURCES.SOURCE_SESSION_STORAGE]
 
-SCRIPT_SOURCE_HOSTNAME = 'foo.bar'
+SCRIPT_SOURCE_HOSTNAME = 'swag.cispa.saarland/exploit.js'

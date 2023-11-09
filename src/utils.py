@@ -546,6 +546,6 @@ def log(st):
     :param st: string to log
     :return: None
     """
-    if CONFIG.debug:
+    if True:
         ts = datetime.datetime.now()
-        print(str(ts), ":", st)
+        print("[log]",str(ts), ":", st)
