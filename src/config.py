@@ -25,7 +25,7 @@ parser = argparse.ArgumentParser(description="""Automatic Exploit Generator resu
 
 parser.add_argument("--debug", action="store_true")
 parser.add_argument("--payload", default='alert(document.domain)')
-parser.add_argument("-f", "--finding", dest='finding', metavar="finding", type=str, help="JSON representation of the finding")
+parser.add_argument("-f", "--finding", dest='finding', metavar="finding", type=str, help="File location containing JSON representation of the finding")
 
 CONFIG = parser.parse_args()
 
