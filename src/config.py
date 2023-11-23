@@ -39,4 +39,6 @@ GENERATE_EXPLOIT_FOR_SOURCES += [SOURCES.SOURCE_COOKIE]
 GENERATE_EXPLOIT_FOR_SOURCES += [SOURCES.SOURCE_LOCAL_STORAGE]
 GENERATE_EXPLOIT_FOR_SOURCES += [SOURCES.SOURCE_SESSION_STORAGE]
 
-SCRIPT_SOURCE_HOSTNAME = 'swag.cispa.saarland/exploit.js'
+# Currently, we are hosting the payload script at this location (script is stored at configs/exploit.js). 
+# If you wish to host at your own location, change this code to your own location with the payload script
+SCRIPT_SOURCE_HOSTNAME = 'swag.cispa.saarland/exploit.js' 
