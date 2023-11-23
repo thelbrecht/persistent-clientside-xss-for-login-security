@@ -1,3 +1,19 @@
+# Modification of "Don't Trust The Locals: Investigating the Prevalence of Persistent Client-Side Cross-Site Scripting in the Wild"
+
+This repository contains a modified version of the originally published code base from Steffens et al. from their paper "Don't Trust The Locals: Investigating the Prevalence of Persistent Client-Side Cross-Site Scripting in the Wild" published at NDSS 2019.
+
+## Our changes
+
+- Added `--finding` CLI option that allows to specify a JSON file location containing flows to be consumed by the exploit generator in `src/config.py`
+- Updated `SCRIPT_SOURCE_HOSTNAME` in `src/config.py` to point to a currently working location during crawling
+- Added `exploit.js` in `configs/` folder containing our payload script
+- Changed `src/generator.py` in numerous locations:
+  1. Updated the usage of `SCRIPT_SOURCE_HOSTNAME` so the trailing slash is omitted
+  2. Replaced the payload `alert` in all occurences with `DOMXSSVerify` to invoke our payload
+- Added `src/main_filearg.py` which loads the specified JSON file specified as an argument via `--finding` and starts the exploit generator with that. Afterwards, it outputs its results to console which are prefixed with `[result]`
+- Extended `src/requirements.txt` with needed requirements for getting the exploit generator to run, namely `html5lib` and `lxml`
+- Changed `src/utils.py` to always output all invocations of the log function to console
+
 # Don't Trust The Locals: Investigating the Prevalence of Persistent Client-Side Cross-Site Scripting in the Wild
 This repository contains our code base used to automatically generate exploit candidates for 
 Reflected Client-Side XSS and Persistent Client-Side XSS.
