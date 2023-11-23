@@ -14,6 +14,10 @@ This repository contains a modified version of the originally published code bas
 - Extended `src/requirements.txt` with needed requirements for getting the exploit generator to run, namely `html5lib` and `lxml`
 - Changed `src/utils.py` to always output all invocations of the log function to console
 
+<br />
+<br />
+Original README
+
 # Don't Trust The Locals: Investigating the Prevalence of Persistent Client-Side Cross-Site Scripting in the Wild
 This repository contains our code base used to automatically generate exploit candidates for 
 Reflected Client-Side XSS and Persistent Client-Side XSS.
