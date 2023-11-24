@@ -1,3 +1,4 @@
+# Changes 2023 by Thomas Helbrecht
 # Copyright (C) 2019 Ben Stock & Marius Steffens
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by

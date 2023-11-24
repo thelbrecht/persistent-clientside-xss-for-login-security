@@ -1,3 +1,4 @@
+# Changes 2023 by Thomas Helbrecht
 from __future__ import print_function
 import json
 from generator import generate_exploit_for_finding

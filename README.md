@@ -2,7 +2,7 @@
 
 This repository contains a modified version of the originally published code base from Steffens et al. from their paper "Don't Trust The Locals: Investigating the Prevalence of Persistent Client-Side Cross-Site Scripting in the Wild" published at NDSS 2019.
 
-## Our changes
+## Changes 2023 by Thomas Helbrecht
 
 - Added `--finding` CLI option that allows to specify a JSON file location containing flows to be consumed by the exploit generator in `src/config.py`
 - Updated `SCRIPT_SOURCE_HOSTNAME` in `src/config.py` to point to a currently working location during crawling
